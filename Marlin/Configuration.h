@@ -1626,10 +1626,10 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   6 // Z Clearance for Deploy/Stow //(CJS)
-#define Z_CLEARANCE_BETWEEN_PROBES  6 // Z Clearance between probe points //(CJS)
-#define Z_CLEARANCE_MULTI_PROBE     6 // Z Clearance between multiple probes //(CJS)
-#define Z_AFTER_PROBING           15 // Z position after probing is done //(CJS)
+#define Z_CLEARANCE_DEPLOY_PROBE   7  // Z Clearance for Deploy/Stow //(CJS)
+#define Z_CLEARANCE_BETWEEN_PROBES  7 // Z Clearance between probe points //(CJS)
+#define Z_CLEARANCE_MULTI_PROBE     7 // Z Clearance between multiple probes //(CJS)
+#define Z_AFTER_PROBING           15  // Z position after probing is done //(CJS)
 
 #define Z_PROBE_LOW_POINT          -1 // Farthest distance below the trigger-point to go before stopping //(CJS)
 
