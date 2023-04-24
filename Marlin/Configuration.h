@@ -62,7 +62,8 @@
 // Author info of this build printed to the host during boot and M115
 #define STRING_CONFIG_H_AUTHOR "(CJS, 4/23/23 REV1)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
-
+#define NO_AUTO_ASSIGN_WARNING
+#define DIAG_JUMPERS_REMOVED
 /**
  * *** VENDORS PLEASE READ ***
  *
