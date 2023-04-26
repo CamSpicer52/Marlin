@@ -1378,7 +1378,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 3.5, 74.1, -2.46 }
+#define NOZZLE_TO_PROBE_OFFSET { 3.5, 74.1, -2.492 } //.1mm feeler gague
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
