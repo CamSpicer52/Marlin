@@ -623,14 +623,11 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    //Standard 12/16/2021
-    #define DEFAULT_Kp  33.4
-    #define DEFAULT_Ki   2.03
-    #define DEFAULT_Kd 137.7
-    //e3d head 12/16/2021
-    //#define DEFAULT_Kp  43.5
-    //#define DEFAULT_Ki   4.18
-    //#define DEFAULT_Kd  113.1
+    //e3d
+    #define DEFAULT_Kp  57.67
+    #define DEFAULT_Ki   5.91
+    #define DEFAULT_Kd 140.70
+   
   #endif
 #endif
 
