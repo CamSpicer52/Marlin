@@ -264,10 +264,10 @@
   #endif
 #else
   #ifndef FAN1_PIN
-    #define FAN1_PIN                        PB6   // Fan1
+    #define FAN1_PIN                        PB5   // Fan1 //(CJS PB6 burnt out 4/26)
   #endif
   #ifndef FAN2_PIN
-    #define FAN2_PIN                        PB5   // Fan2
+    #define FAN2_PIN                        PB6   // Fan2
   #endif
 #endif // SPINDLE_FEATURE || LASER_FEATURE
 
