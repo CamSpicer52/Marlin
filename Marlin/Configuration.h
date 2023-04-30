@@ -624,9 +624,9 @@
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
     //e3d
-    #define DEFAULT_Kp  57.67
-    #define DEFAULT_Ki   5.91
-    #define DEFAULT_Kd 140.70
+    #define DEFAULT_Kp  46.95
+    #define DEFAULT_Ki   3.62
+    #define DEFAULT_Kd 152.12
    
   #endif
 #endif
