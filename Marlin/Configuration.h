@@ -578,13 +578,13 @@
 #endif
 
 #if HAS_E_TEMP_SENSOR
-  #define TEMP_RESIDENCY_TIME         15  // (seconds) Time to wait for hotend to "settle" in M109
+  #define TEMP_RESIDENCY_TIME         10  // (seconds) Time to wait for hotend to "settle" in M109
   #define TEMP_WINDOW                  1  // (°C) Temperature proximity for the "temperature reached" timer
   #define TEMP_HYSTERESIS              3  // (°C) Temperature proximity considered "close enough" to the target
 #endif
 
 #if TEMP_SENSOR_BED
-  #define TEMP_BED_RESIDENCY_TIME     15  // (seconds) Time to wait for bed to "settle" in M190
+  #define TEMP_BED_RESIDENCY_TIME     10  // (seconds) Time to wait for bed to "settle" in M190
   #define TEMP_BED_WINDOW              1  // (°C) Temperature proximity for the "temperature reached" timer
   #define TEMP_BED_HYSTERESIS          3  // (°C) Temperature proximity considered "close enough" to the target
 #endif
@@ -644,9 +644,9 @@
  * (especially before PID tuning). Setting the target temperature too close to MAXTEMP guarantees
  * a MAXTEMP shutdown! Use these values to forbid temperatures being set too close to MAXTEMP.
  */
-#define HOTEND_OVERSHOOT 10   // (°C) Forbid temperatures over MAXTEMP - OVERSHOOT
+#define HOTEND_OVERSHOOT 15   // (°C) Forbid temperatures over MAXTEMP - OVERSHOOT
 #define BED_OVERSHOOT    10   // (°C) Forbid temperatures over MAXTEMP - OVERSHOOT
-#define COOLER_OVERSHOOT  4   // (°C) Forbid temperatures closer than OVERSHOOT
+#define COOLER_OVERSHOOT  2   // (°C) Forbid temperatures closer than OVERSHOOT
 
 //===========================================================================
 //============================= PID Settings ================================
@@ -680,13 +680,10 @@
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
     //Standard 12/16/2021
-    #define DEFAULT_Kp  33.4
-    #define DEFAULT_Ki   2.03
-    #define DEFAULT_Kd 137.7
-    //e3d head 12/16/2021
-    //#define DEFAULT_Kp  43.5
-    //#define DEFAULT_Ki   4.18
-    //#define DEFAULT_Kd  113.1
+    #define DEFAULT_Kp  46.31
+    #define DEFAULT_Ki   4.42
+    #define DEFAULT_Kd 121.33
+    
   #endif
 #else
   #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
@@ -762,7 +759,7 @@
  *
  * With this option disabled, bang-bang will be used. BED_LIMIT_SWITCHING enables hysteresis.
  */
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 #if ENABLED(PIDTEMPBED)
   //#define MIN_BED_POWER 0
@@ -770,9 +767,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 191.2
-  #define DEFAULT_bedKi 36.76
-  #define DEFAULT_bedKd 662.7
+  #define DEFAULT_bedKp 352.66
+  #define DEFAULT_bedKi 68.88
+  #define DEFAULT_bedKd 1203.74
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #else
@@ -1224,18 +1221,18 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.1, 80.1, 3192, 97.43746 } //E3D { 80.1, 80.1, 1598.8, 143.79003 } //(CJS)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.1, 80.1, 3192, 139.47 } //E3D { 80.1, 80.1, 1598.8, 143.79003 } //(CJS)
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 120, 100, 5, 25 } //(CJS)
+#define DEFAULT_MAX_FEEDRATE          { 200, 200, 5, 25 } //(CJS)
 
 #define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 200, 200, 10, 50 } // ...or, set your own edit limits //(CJS)
+  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50 } // ...or, set your own edit limits //(CJS)
 #endif
 
 /**
@@ -1244,7 +1241,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 30, 10000 } //(CJS)
+#define DEFAULT_MAX_ACCELERATION      { 1100, 1100, 50, 10000 } //(CJS)
 
 #define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1259,9 +1256,9 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          400    // X, Y, Z and E acceleration for printing moves //(CJS)
-#define DEFAULT_RETRACT_ACCELERATION  800    // E acceleration for retracts //(CJS)
-#define DEFAULT_TRAVEL_ACCELERATION   800    // X, Y, Z acceleration for travel (non printing) moves //(CJS)
+#define DEFAULT_ACCELERATION          1100    // X, Y, Z and E acceleration for printing moves //(CJS)
+#define DEFAULT_RETRACT_ACCELERATION  1100    // E acceleration for retracts //(CJS)
+#define DEFAULT_TRAVEL_ACCELERATION   1100    // X, Y, Z acceleration for travel (non printing) moves //(CJS)
 
 /**
  * Default Jerk limits (mm/s)
@@ -1542,7 +1539,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 3.5, 74.1, 0 } //{ -7.6, 73.9, -1.508 } //E3D //(CJS)
+#define NOZZLE_TO_PROBE_OFFSET { -8, 75.8, -2.75 } //{ -7.6, 73.9, -1.508 } //E3D //(CJS)
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1555,10 +1552,10 @@
 #define PROBING_MARGIN 20
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_FEEDRATE (4000)
+#define XY_PROBE_FEEDRATE (3000)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST (240)
+#define Z_PROBE_FEEDRATE_FAST (180)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)
@@ -1609,7 +1606,7 @@
  * A total of 3 or more adds more slow probes, taking the average.
  */
 #define MULTIPLE_PROBING 2 //(CJS)
-//#define EXTRA_PROBING    1
+#define EXTRA_PROBING    1
 
 /**
  * Z probes require clearance when deploying, stowing, and moving between
@@ -1630,7 +1627,7 @@
 #define Z_CLEARANCE_MULTI_PROBE     6 // Z Clearance between multiple probes //(CJS)
 #define Z_AFTER_PROBING           15  // Z position after probing is done //(CJS)
 
-#define Z_PROBE_LOW_POINT          -1 // Farthest distance below the trigger-point to go before stopping //(CJS)
+#define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping //(CJS)
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -5
@@ -1768,7 +1765,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 370 //(CJS)
+#define Z_MAX_POS 330 //(CJS)
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0
@@ -2350,16 +2347,16 @@
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 //(CJS)
 #define PREHEAT_2_LABEL       "PLA"
-#define PREHEAT_2_TEMP_HOTEND 180
-#define PREHEAT_2_TEMP_BED     70
+#define PREHEAT_2_TEMP_HOTEND 200
+#define PREHEAT_2_TEMP_BED     60
 //#define PREHEAT_1_TEMP_CHAMBER 35
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
-#define PREHEAT_3_LABEL       "ABS"
-#define PREHEAT_3_TEMP_HOTEND 240
-#define PREHEAT_3_TEMP_BED    110
+//#define PREHEAT_3_LABEL       "ABS"
+//#define PREHEAT_3_TEMP_HOTEND 240
+//#define PREHEAT_3_TEMP_BED    110
 //#define PREHEAT_2_TEMP_CHAMBER 35
-#define PREHEAT_3_FAN_SPEED     0 // Value from 0 to 255
+//#define PREHEAT_3_FAN_SPEED     0 // Value from 0 to 255
 
 // @section motion
 
