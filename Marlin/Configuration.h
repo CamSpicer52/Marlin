@@ -1544,7 +1544,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -8, 75.8, -2.75 } //{ -7.6, 73.9, -1.508 } //E3D //(CJS)
+#define NOZZLE_TO_PROBE_OFFSET { -8, 75.8, -2.04 } //{ -7.6, 73.9, -1.508 } //E3D //(CJS)
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -3404,6 +3404,7 @@
 // Set number of user-controlled fans. Disable to use all board-defined fans.
 // :[1,2,3,4,5,6,7,8]
 #define NUM_M106_FANS 1 //Also need to set the fan 2 output to fan1 output
+
 
 // Use software PWM to drive the fan, as for the heaters. This uses a very low frequency
 // which is not as annoying as with the hardware PWM. On the other hand, if this frequency
