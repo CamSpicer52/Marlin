@@ -1226,7 +1226,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.1, 80.1, 3192, 139.47 } //E3D { 80.1, 80.1, 1598.8, 143.79003 } //(CJS)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.1, 80.1, 3192, 140.17 } //E3D { 80.1, 80.1, 1598.8, 143.79003 } //(CJS)
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1544,7 +1544,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -8, 75.8, -2.04 } //{ -7.6, 73.9, -1.508 } //E3D //(CJS)
+#define NOZZLE_TO_PROBE_OFFSET { -8, 75.8, -2.13 } //{ -7.6, 73.9, -1.508 } //E3D //(CJS)
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
