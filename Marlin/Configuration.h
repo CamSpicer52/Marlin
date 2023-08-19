@@ -1233,11 +1233,11 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 200, 200, 5, 25 } //(CJS)
+#define DEFAULT_MAX_FEEDRATE          { 100, 100, 5, 25 } //(CJS)
 
 #define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
-  #define MAX_FEEDRATE_EDIT_VALUES    { 600, 600, 10, 50 } // ...or, set your own edit limits //(CJS)
+  #define MAX_FEEDRATE_EDIT_VALUES    { 400, 400, 10, 50 } // ...or, set your own edit limits //(CJS)
 #endif
 
 /**
@@ -1246,11 +1246,11 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 1100, 1100, 50, 10000 } //(CJS)
+#define DEFAULT_MAX_ACCELERATION      { 1100, 800, 50, 10000 } //(CJS)
 
 #define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
-  #define MAX_ACCEL_EDIT_VALUES       { 3000, 3000, 35, 15000 } // ...or, set your own edit limits //(CJS)
+  #define MAX_ACCEL_EDIT_VALUES       { 3000, 3000, 100, 15000 } // ...or, set your own edit limits //(CJS)
 #endif
 
 /**
@@ -1261,7 +1261,7 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          1100    // X, Y, Z and E acceleration for printing moves //(CJS)
+#define DEFAULT_ACCELERATION          650    // X, Y, Z and E acceleration for printing moves //(CJS)
 #define DEFAULT_RETRACT_ACCELERATION  1100    // E acceleration for retracts //(CJS)
 #define DEFAULT_TRAVEL_ACCELERATION   1100    // X, Y, Z acceleration for travel (non printing) moves //(CJS)
 
@@ -1303,7 +1303,7 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.03 // (mm) Distance from real junction edge //(CJS)
+  #define JUNCTION_DEVIATION_MM 0.06 // (mm) Distance from real junction edge //(CJS)
   #define JD_HANDLE_SMALL_SEGMENTS    // Use curvature estimation instead of just the junction angle
                                       // for small segments (< 1mm) with large junction angles (> 135°).
 #endif
