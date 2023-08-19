@@ -1250,7 +1250,7 @@
 
 #define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
-  #define MAX_ACCEL_EDIT_VALUES       { 1500, 1500, 35, 15000 } // ...or, set your own edit limits //(CJS)
+  #define MAX_ACCEL_EDIT_VALUES       { 3000, 3000, 35, 15000 } // ...or, set your own edit limits //(CJS)
 #endif
 
 /**
