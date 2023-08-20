@@ -1544,7 +1544,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -8, 75.8, -2.13 } //{ -7.6, 73.9, -1.508 } //E3D //(CJS)
+#define NOZZLE_TO_PROBE_OFFSET { -8, 75.8, -2.35 } //{ -7.6, 73.9, -1.508 } //E3D //(CJS)
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
