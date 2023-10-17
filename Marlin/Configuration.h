@@ -684,11 +684,11 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    //Standard 12/16/2021
-    #define DEFAULT_Kp  28.70
-    #define DEFAULT_Ki   2.24
+    //Standard LGX nozzle 10/14/2023
+    #define DEFAULT_Kp  27.18
+    #define DEFAULT_Ki   2.02
     #define DEFAULT_Kd 91.85
-    //Done without part cooling fa or filament 10/14/2023. Need to redo eventually
+    
   #endif
 #else
   #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
