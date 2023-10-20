@@ -65,7 +65,7 @@
 
 // Author info of this build printed to the host during boot and M115
 #define STRING_CONFIG_H_AUTHOR "(CJS, 2.1.2.1)" // Who made the changes.
-#define MARLIN_WEBSITE_URL "  10/14/2023  " //(CJS) src/language.h
+#define MARLIN_WEBSITE_URL "  2023-10-16_LGXExtruder  " //(CJS) src/language.h
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 // @section machine
