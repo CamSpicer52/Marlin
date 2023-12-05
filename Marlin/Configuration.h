@@ -684,10 +684,11 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    //Standard LGX nozzle 10/14/2023
-    #define DEFAULT_Kp  27.18
-    #define DEFAULT_Ki   2.02
-    #define DEFAULT_Kd 91.85
+    //Standard LGX nozzle 12/04/2023
+    #define DEFAULT_Kp  23.01
+    #define DEFAULT_Ki   1.57
+    #define DEFAULT_Kd 84.21
+   
     
   #endif
 #else
