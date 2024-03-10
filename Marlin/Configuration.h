@@ -2259,7 +2259,7 @@
  * Commands to execute at the end of G29 probing.
  * Useful to retract or move the Z probe out of the way.
  */
-#define Z_PROBE_END_SCRIPT "G1 Z15\nG1 X100 Y100 F6000" //(CJS)
+#define EVENT_GCODE_AFTER_G29 "G1 Z15\nG1 X100 Y100 F6000" //(CJS)
 
 // @section homing
 
